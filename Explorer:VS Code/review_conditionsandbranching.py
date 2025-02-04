@@ -32,4 +32,24 @@ else:
     print("18살 미만임")
 print("Move on")
 
-# Logical operators
+# Logical operators : and or not
+album_year = 1983
+if(album_year > 1979) and (album_year < 1990):
+    print("The album was made in the 80's")
+print("")
+print("Do stuff")
+
+album_year = 1990
+if (album_year > 1989) or (album_year < 1980):
+    print("Album was not made in the 80's")
+else:
+    print("Album was made in the 80's")
+
+# not operator and boolean
+boolean_value = False
+if not boolean_value:
+    print("The value is False")
+
+is_do_not_disturb = True
+if not is_do_not_disturb:
+    send_notification("New message received")
