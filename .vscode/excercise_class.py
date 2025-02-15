@@ -8,6 +8,7 @@ class firstclass:
         def method1(self, parameter1):
             return self.attribute1 + parameter1
 """
+import matplotlib.pyplot as plt
 
 # 예제가 너무 복잡하고 불편해서 그냥 현실 세계와 유사한 예제를 통해 학습하기로 함.
 
@@ -51,16 +52,36 @@ import matplotlib.pyplot as plt
 # class cirble (object):
 
 class Circle(object):
-    # constructor
-    def __init__(self, radius, color):
-        self.radius = radius
-        self.color = color
     
-    # method
-    def add_radius(self,r):
+    # Constructor
+    def __init__(self, radius=3, color='blue'):
+        self.radius = radius
+        self.color = color 
+    
+    # Method
+    def add_radius(self, r):
         self.radius = self.radius + r
         return(self.radius)
     
-    # method
+    # Method
     def drawCircle(self):
-        
+        plt.gca().add_patch(plt.Circle((0, 0), radius=self.radius, fc=self.color))
+        plt.axis('scaled')
+        plt.show()
+
+Redcircle = Circle(10, 'red')
+dir(Redcircle)
+Redcircle.radius
+Redcircle.color
+Redcircle.drawCircle()
+
+print('Radius of object:',Redcircle.radius)
+Redcircle.add_radius(10)
+print('Radius of object of after applying the method add_radius(2):',Redcircle.radius)
+Redcircle.drawCircle()
+
+BlueCircle = Circle(radius=100)
+BlueCircle.radius
+BlueCircle.color
+BlueCircle.add_radius(100)
+BlueCircle.drawCircle()
